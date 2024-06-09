@@ -1,0 +1,14 @@
+[Unit]
+Description=Fullscreen Blocker Service
+After=graphical.target
+
+[Service]
+ExecStart=%h/bin/fullscreen_blocker exit_disabled
+Restart=always
+Environment=DISPLAY=:0
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=fullscreen_blocker
+
+[Install]
+WantedBy=default.target
